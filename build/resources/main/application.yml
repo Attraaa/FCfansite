@@ -1,0 +1,24 @@
+
+spring:
+ application:
+  name: WebProgrammingExam
+ datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql:/localhost:3306/
+  username: spring
+  password: project 
+
+ mvc:
+  view:
+   prefix: /views/
+   suffix: .jsp
+   
+mybatis:
+ mapper-locations: classpath:mapper/*.xml
+
+ 
+ 
+ 
+ 
+ 
+ 
