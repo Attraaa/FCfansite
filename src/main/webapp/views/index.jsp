@@ -6,6 +6,10 @@
         <title>Document</title>
     </head>
     <body>
+		<%
+			String userID = (String) session.getAttribute("userID");
+			System.out.println(userID);
+		 %>
         <header id="header">
             <div class="menu">
                 <div class="logo">
@@ -21,8 +25,8 @@
                     <img src="/image/profile.png" alt="프로필 이미지">
                     <div class="profile_menu">
                         <ul>
-                            <li><a href="/register/login">로그인</a></li>
-                            <li><a href="/register/register">회원가입</a></li>
+                            <li><a href="/login">로그인</a></li>
+                            <li><a href="/register">회원가입</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,10 +53,9 @@
         <aside id="aside_right">
             리그 테이블이 들어갈 공간
         </aside>
-        
+		<footer></footer>
         
         <script src="/script/index.js"></script>
     </body>
     
-    <footer></footer>
 </html>
