@@ -1,0 +1,101 @@
+
+.register_div {
+    width: 400px;
+    height: 500px;
+    border: 2px solid;
+    border-radius: 15px;
+
+    position: relative;
+    top: 120px;
+
+    &.hidden {
+        opacity: 0;
+    }
+    p {
+        position: absolute;
+        font-size: 40px;
+        left: 125px;
+        top: 40px;
+    }
+    input {
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        margin-left: 45px;
+
+    }
+    #userID {
+        margin-top: 130px;
+    }
+    #password {
+        margin-top: 20px;
+    }
+    #again_password {
+        margin-top: 20px;
+    }
+    .buttons {
+        position: absolute;
+        left: 63px;
+        bottom: 70px;
+
+        button {
+            width: 130px;
+            height: 60px;
+            margin-right: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+    }
+}
+
+.register_div2 {
+    width: 400px;
+    height: 500px;
+    border: 2px solid;
+    border-radius: 15px;
+
+    position: absolute;
+    top: 120px;
+    left: 518px;
+
+    display: none;
+    &.show {
+        display: block;
+    }
+    p {
+        position: absolute;
+        font-size: 40px;
+        left: 80px;
+        top: 40px;
+    }
+    input {
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        margin-left: 45px;
+
+    }
+    #nickname {
+        margin-top: 130px;
+    }
+    #birth, #desc {
+        margin-top: 20px;
+    }
+    .buttons {
+        position: absolute;
+        left: 63px;
+        bottom: 70px;
+
+        button {
+            width: 130px;
+            height: 60px;
+            margin-right: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+    }
+}

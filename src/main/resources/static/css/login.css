@@ -1,0 +1,55 @@
+
+.login_div {
+        
+    width: 400px;
+    height: 500px;
+    border: 2px solid;
+    border-radius: 15px;
+
+    position: relative;
+    top: 120px;
+    p {
+        font-size: 35px;
+        position: absolute;
+        left: 150px;
+        top: 40px;
+    }
+    input {
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        margin-left: 45px;
+
+    }
+    #userID {
+        margin-top: 130px;
+    }
+    #password {
+        margin-top: 20px;
+    }
+    .buttons {
+        position: absolute;
+        left: 65px;
+        bottom: 150px;
+
+        button {
+            width: 130px;
+            height: 60px;
+            margin-right: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+    }
+    .register_link {
+        width: 250px;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 18px;
+
+        position: absolute;
+        bottom: 70px;
+        left: 75px;
+    }
+}
