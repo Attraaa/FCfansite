@@ -6,6 +6,12 @@
 		from users 
 		where u_id = #{u_id} and u_pwd = #{u_pwd}
 	</select>
+	<select id="getUserInfo" parameterType = "String" resultType="hashmap">
+	
+		select *
+		from users 
+		where u_id = #{userID}
+	</select>
 	
 	<insert id="getRegister" parameterType="net.aisw.dto.userDTO">
 		insert into users(u_id, u_pwd, u_name, u_birth, u_why)

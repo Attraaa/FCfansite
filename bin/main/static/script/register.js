@@ -3,6 +3,7 @@ const register_div1 = document.querySelector(".register_div");
 const register_div2 = document.querySelector(".register_div2");
 
 const next_btn = document.querySelector(".next");
+const back_btn = document.querySelector(".back");
 const submit_btn = document.querySelector(".submit");
 
 const userID = document.getElementById("userID");
@@ -30,9 +31,12 @@ const next = () => {
     }
     register_div1.classList.add("hidden");
     register_div2.classList.add("show");
-    next_btn.removeEventListener("click", next);
 };
-
+const back = () => {
+	register_div1.classList.remove("hidden");
+	register_div2.classList.remove("show");
+	
+}
 const submit = () => {
     if(nickname.value === "") {
         alert("닉네임을 입력해주세요.");
@@ -42,9 +46,12 @@ const submit = () => {
         alert("생년월일을 입력해주세요.");
         return;
     }
-    next_btn.removeEventListener("click", submit);
+	next_btn.removeEventListener("click", next);
+	back_btn.removeEventListener("click", back);
+    submit_btn.removeEventListener("click", submit);
     register_form.submit();
 };
 
 next_btn.addEventListener("click", next);
+back_btn.addEventListener("click", back);
 submit_btn.addEventListener("click", submit);
