@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+
+<%
+	String userID = (String) session.getAttribute("userID");
+%>
 <html>
     <head>
         <link rel="stylesheet" href="/css/index.css">
@@ -6,10 +10,7 @@
         <title>Document</title>
     </head>
     <body>
-		<%
-			String userID = (String) session.getAttribute("userID");
-			System.out.println(userID);
-		 %>
+		
         <header id="header">
             <div class="menu">
                 <div class="logo">
@@ -24,9 +25,22 @@
                 <div class="profile">
                     <img src="/image/profile.png" alt="프로필 이미지">
                     <div class="profile_menu">
+						
                         <ul>
+							<% 
+								if(userID == null) {	
+							%>
                             <li><a href="/login">로그인</a></li>
                             <li><a href="/register">회원가입</a></li>
+							<%
+								} else {
+							%>
+							<li><a href="/mypage/response">마이페이지</a></li>
+							<li><a href="/logout">로그아웃</a></li>
+							<%
+								}
+							%>
+
                         </ul>
                     </div>
                 </div>

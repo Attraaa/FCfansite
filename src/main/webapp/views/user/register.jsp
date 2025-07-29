@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/user/register.css">
     <link rel="stylesheet" href="/css/reset.css">
 </head>
 <body>
+	
       <form id="register_form" action="/register/response" method="post">
         <div class="register_div">
+			<div class="logo">
+				<a href="/index"><img src="/image/logo.png" alt="맨체스터 시티 엠블럼"></a>
+				</div>
             <p>회원가입</p>
             <input type="text" id="userID" name="u_id" placeholder="아이디를 입력해주세요.">
             <input type="password" id="password" name="u_pwd" placeholder="비밀번호를 입력해주세요.">

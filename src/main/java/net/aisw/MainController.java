@@ -1,5 +1,6 @@
 package net.aisw;
 
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,15 +32,26 @@ public class MainController {
 	public String StartPage() {
 		return "index";
 	}
+	@RequestMapping("/logout")
+	public String Logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:/index";
+	}
 	
 	@RequestMapping("/login")
 	public String LoginPage() {
-		return "/register/login";
+		return "/user/login";
 	}
 	@RequestMapping("/register")
 	public String RegisterPage() {
-		return "/register/register";
+		return "/user/register";
 	}
+	@RequestMapping("/mypage")
+	public String MypagePage() {
+		return "/user/mypage";
+	}
+	
 	
 	@RequestMapping("/login/response")
 	public String Login_ResponsePage(@ModelAttribute userDTO userVo, HttpSession session) {
@@ -61,6 +73,25 @@ public class MainController {
 			return "redirect:/login";
 		}
 		return "redirect:/register";
+	}
+	
+	@RequestMapping("/mypage/response")
+	public String MypagePage_Response(@ModelAttribute userDTO userVo, HttpSession session) {
+		String userID = (String) session.getAttribute("userID");
+		String userName = (String) session.getAttribute("userName");
+		
+		if(userName == null) {
+			System.out.println("세션 생성");
+			HashMap<String, String> userInfo = usv.getUserInfo(userID);
+			System.out.println(userInfo);
+			session.setAttribute("userName", userInfo.get("u_name"));
+			session.setAttribute("userBirth", userInfo.get("u_birth"));
+			session.setAttribute("userJoinDate", userInfo.get("u_joinDate"));
+			session.setAttribute("userWhy", userInfo.get("u_why"));
+		}
+		
+		
+		return "redirect:/mypage";
 	}
 	
 	

@@ -1,20 +1,19 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/user/login.css">
     <link rel="stylesheet" href="/css/reset.css">
     <title>로그인</title>
 </head>
 <body>
     <form id="login_form" action="/login/response" method="post">
         <div class="login_div">
+			<div class="logo">
+				<a href="/index"><img src="/image/logo.png" alt="맨체스터 시티 엠블럼"></a>
+			</div>
             <p>로그인</p>
-			<%
-				String userID = (String) session.getAttribute("userID");
-				System.out.println(userID);
-			%>
             <input type="text" id="userID" name="u_id" placeholder="아이디를 입력해주세요." required>
-            <input type="text" id="password" name="u_pwd" placeholder="비밀번호를 입력해주세요." required>
+            <input type="password" id="password" name="u_pwd" placeholder="비밀번호를 입력해주세요." required>
             <div class="buttons">
                 <button type="submit" class="submit">로그인</button>
                 <button type="reset" class="cancel">취소</button>
