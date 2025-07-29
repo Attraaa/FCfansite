@@ -52,6 +52,11 @@ public class MainController {
 		return "/user/mypage";
 	}
 	
+	@RequestMapping("/communityMain")
+	public String CommunityMain_Page() {
+	      	return "/community/communityMain";
+	    }
+	
 	
 	@RequestMapping("/login/response")
 	public String Login_ResponsePage(@ModelAttribute userDTO userVo, HttpSession session) {
@@ -89,8 +94,6 @@ public class MainController {
 			session.setAttribute("userJoinDate", userInfo.get("u_joinDate"));
 			session.setAttribute("userWhy", userInfo.get("u_why"));
 		}
-		
-		
 		return "redirect:/mypage";
 	}
 	

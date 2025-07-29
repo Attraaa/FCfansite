@@ -1,5 +1,6 @@
 package net.aisw;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,3 +40,22 @@ public class CommunityController {
     }
     
 }
+=======
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class CommunityController {
+   
+
+    @RequestMapping("/PostCreate")
+    public String PostCreate() {
+        return "community/PostCreate";
+    }
+    
+}
+>>>>>>> 911c803c1bab2b379da00f014232764ac3d42ead
