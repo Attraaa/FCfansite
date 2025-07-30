@@ -19,7 +19,7 @@
                 <ul class="menu_ul">
                     <li class="li_1"><a href="#">선수</a></li>
                     <li class="li_2"><a href="#">구단</a></li>
-                    <li class="li_3"><a href="/communityMain">커뮤니티</a></li>
+                    <li class="li_3"><a href="/CommunityMain">커뮤니티</a></li>
                     <li class="li_4"><a href="#">컨텐츠</a></li>
                 </ul>
                 <div class="profile">

@@ -19,6 +19,9 @@ public class UserService {
 	public boolean getRegister(userDTO userVo) {
 		return uMapper.getRegister(userVo);
 	}
+	public boolean ReplacePassword(userDTO userVo) {
+		return uMapper.ReplacePassword(userVo);
+	}
 	public HashMap<String, String> getUserInfo(String userID) {
 		return uMapper.getUserInfo(userID);
 	}

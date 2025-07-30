@@ -11,6 +11,7 @@ import net.aisw.dto.userDTO;
 public interface UserMapper {
 	public int getLogin(userDTO userVo);
 	public boolean getRegister(userDTO userVo);
+	public boolean ReplacePassword(userDTO userVo);
 	public HashMap<String, String> getUserInfo(String userID);
 	
 }

@@ -16,4 +16,10 @@
 		insert into users(u_id, u_pwd, u_name, u_birth, u_why)
 		values(#{u_id}, #{u_pwd}, #{u_name}, #{u_birth}, #{u_why})
 	</insert>
+	
+	<update id="ReplacePassword" parameterType="net.aisw.dto.userDTO">
+		update users
+		set u_pwd = #{u_pwd}
+		where u_id = #{u_id}
+	</update>
 </mapper>

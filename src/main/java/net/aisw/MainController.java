@@ -1,7 +1,10 @@
 package net.aisw;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import net.aisw.dto.userDTO;
 import net.aisw.service.UserService;
@@ -50,24 +55,27 @@ public class MainController {
 	@RequestMapping("/mypage")
 	public String MypagePage() {
 		return "/user/mypage";
-	}
-	
-	@RequestMapping("/communityMain")
-	public String CommunityMain_Page() {
-	      	return "/community/communityMain";
-	    }
-	
+	}	
 	
 	@RequestMapping("/login/response")
-	public String Login_ResponsePage(@ModelAttribute userDTO userVo, HttpSession session) {
+	public String Login_ResponsePage(@ModelAttribute userDTO userVo, HttpSession session, HttpServletResponse response) throws IOException {
 		
 		int log = usv.getLogin(userVo);
 		System.out.println(log);
 		if(log == 1) {	
 			session.setAttribute("userID", userVo.getU_id());
-			return "redirect:/index";
+
 		}
-		return "redirect:/login";
+		else {
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script> alert('아이디 또는 비밀번호가 틀립니다.');");
+			out.println("history.go(-1); </script>");
+			
+			out.close();
+		}
+		return "redirect:/index";
 	}
 	
 	@RequestMapping("/register/response")
@@ -94,6 +102,13 @@ public class MainController {
 			session.setAttribute("userJoinDate", userInfo.get("u_joinDate"));
 			session.setAttribute("userWhy", userInfo.get("u_why"));
 		}
+		return "redirect:/mypage";
+	}
+	@RequestMapping("/replacePassword/response")
+	public String ReplacePassword_Response(@ModelAttribute userDTO userVo) {
+		
+		boolean ReplacePwd = usv.ReplacePassword(userVo);
+		System.out.println(ReplacePwd);
 		return "redirect:/mypage";
 	}
 	
