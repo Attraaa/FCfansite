@@ -22,3 +22,18 @@ profile_menu.addEventListener("mouseout", ()=> {
     profile_menu.classList.remove("show");  
 
 });
+
+// 역사 팝업 닫기 버튼
+function closePopup() {
+    const popup = document.querySelector(".popup");
+    const dim = document.querySelector(".dim");
+    if (popup) popup.style.display = "none";
+    if (dim) dim.style.display = "none";
+}
+
+function openPopup() {
+	const popup = document.getElementById("historyPopup");
+	const dim = document.getElementById("dimLayer");
+	if (popup) popup.style.display = "block";
+	if (dim) dim.style.display = "block";
+}
