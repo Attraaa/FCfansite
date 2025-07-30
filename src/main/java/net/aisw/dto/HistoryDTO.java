@@ -1,6 +1,6 @@
 package net.aisw.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 import lombok.Data;
 import lombok.Getter;
@@ -17,8 +17,8 @@ public class HistoryDTO {
 	private String h_content;
 	private String h_photo;
 
-	@Override
-	public String toString() {
-		return "[날짜: " + h_date + ", 제목: " + h_title + ", 내용: " + h_content + ", 사진: " + h_photo + "]";
-	}
+	//@Override
+	//public String toString() {
+	//	return "[날짜: " + h_date + ", 제목: " + h_title + ", 내용: " + h_content + ", 사진: " + h_photo + "]";
+	//}
 }
