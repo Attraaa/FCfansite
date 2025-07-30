@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%
+	String userID = (String) session.getAttribute("userID");
+	String userName = (String) session.getAttribute("userName");
+ %>
 <html>
     <head>
         <title>글 작성</title>
@@ -38,6 +42,8 @@
                 <input type="text" name="c_title" id="c_title">
                 <h2>내용</h2>
                 <textarea name="c_contents" id="c_contents" rows="10" cols="100" maxlength="2500"></textarea>
+				<input type="hidden" name="u_id" value=<%=userID %>>
+				<input type="hidden" name="u_name" value=<%=userName %>>
                 <button type="submit" name="submitBtn" id="submitBtn">작성</button>
                 <input type="button" name="back" value="뒤로가기" onClick="location.href=CommunityMain"> 
             </form>

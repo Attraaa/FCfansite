@@ -1,0 +1,43 @@
+th {
+	position: relative;
+}
+.th_date {
+	left: 30px;
+}
+.th_ID {
+	left: 50px;
+}
+.th_like {
+	left: 70px;
+}
+.th_dislike {
+	left: 90px;
+}
+.write_btn {
+	position: absolute;
+	top: 90px;
+	left: 100px;
+	width: 170px;
+	height: 50px;
+	font-size: 20px;
+	font-weight: 600;
+	background-color: black;
+	color: white;
+}
+td {
+	position: relative;	
+}
+
+.date {
+	left: 30px;
+}
+.ID {
+	left: 50px;
+}
+.like {
+	left: 86px;
+}
+.dislike {
+	left: 106px;
+}
+

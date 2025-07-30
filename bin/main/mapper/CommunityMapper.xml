@@ -2,7 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0// EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.aisw.mapper.CommunityMapper">
     <insert id="SavePost" parameterType="net.aisw.dto.communityDTO">
-        INSERT INTO community(c_title, c_contents)
-        values(#{c_title}, #{c_contents})
+        INSERT INTO community(c_title, c_contents, u_name, u_id)
+        values(#{c_title}, #{c_contents}, #{u_name}, #{u_id})
     </insert>
+    
+    <select id="getCommunityInfo" resultType="net.aisw.dto.communityDTO">
+		select * from community 
+	</select>
 </mapper>

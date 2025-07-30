@@ -1,5 +1,7 @@
 package net.aisw.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ public class CommunityService {
     public int SavePost(communityDTO cmVo){
         
         return cMapper.SavePost(cmVo);
+    }
+    public List<communityDTO> getCommunityInfo() {
+    	return cMapper.getCommunityInfo();
     }
     
 }

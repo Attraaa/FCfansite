@@ -1,5 +1,7 @@
 package net.aisw;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,20 +24,23 @@ public class CommunityController {
 
     @RequestMapping("/CommunityMain")
     public String CommunityMain() {
+    	   
         return "community/CommunityMain";
     }
 
     @RequestMapping("/PostCreate")//임시
-    public String PostCreate(@ModelAttribute communityDTO cmVo) {
-        System.out.println(cmVo);
+    public String PostCreate() {
         return "community/PostCreate";
     }
 
     @PostMapping("/SavePost")
-    public String SavePost(@ModelAttribute communityDTO cmVo) {
-        System.out.println(cmVo);
+    public String SavePost(@ModelAttribute communityDTO cmVo, HttpSession session) {
         cmService.SavePost(cmVo);
-        return "community/CommunityMain";
+        
+        List<communityDTO> communityInfo = cmService.getCommunityInfo();
+        session.setAttribute("communityInfo", communityInfo);
+     
+        return "redirect:/CommunityMain";
     }
     
 }

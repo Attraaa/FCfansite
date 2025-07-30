@@ -12,6 +12,8 @@ public interface UserMapper {
 	public int getLogin(userDTO userVo);
 	public boolean getRegister(userDTO userVo);
 	public boolean ReplacePassword(userDTO userVo);
+	public String getUserName(String userID);
 	public HashMap<String, String> getUserInfo(String userID);
+	
 	
 }

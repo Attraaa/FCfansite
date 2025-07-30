@@ -59,12 +59,13 @@ public class MainController {
 	
 	@RequestMapping("/login/response")
 	public String Login_ResponsePage(@ModelAttribute userDTO userVo, HttpSession session, HttpServletResponse response) throws IOException {
-		
+
 		int log = usv.getLogin(userVo);
 		System.out.println(log);
 		if(log == 1) {	
+			String userName = usv.getUserName(userVo.getU_id());
 			session.setAttribute("userID", userVo.getU_id());
-
+			session.setAttribute("userName", userName);
 		}
 		else {
 			response.setCharacterEncoding("UTF-8");
@@ -72,7 +73,6 @@ public class MainController {
 			PrintWriter out = response.getWriter();
 			out.println("<script> alert('아이디 또는 비밀번호가 틀립니다.');");
 			out.println("history.go(-1); </script>");
-			
 			out.close();
 		}
 		return "redirect:/index";
@@ -91,9 +91,9 @@ public class MainController {
 	@RequestMapping("/mypage/response")
 	public String MypagePage_Response(@ModelAttribute userDTO userVo, HttpSession session) {
 		String userID = (String) session.getAttribute("userID");
-		String userName = (String) session.getAttribute("userName");
+		String userJoinDate = (String) session.getAttribute("userJoinDate");
 		
-		if(userName == null) {
+		if(userJoinDate == null) {
 			System.out.println("세션 생성");
 			HashMap<String, String> userInfo = usv.getUserInfo(userID);
 			System.out.println(userInfo);
