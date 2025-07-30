@@ -1,0 +1,11 @@
+<?xml version= "1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0// EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.aisw.mapper.PlayerMapper">
+
+    <select id="getPlayerInfo" parameterType="net.aisw.dto.PlayerDTO" resultType="java.util.HashMap">
+        SELECT * FROM player WHERE p_name = #{p_name}
+    </select>
+    <select id="getAllPlayers" resultType="net.aisw.dto.PlayerDTO">
+        SELECT * FROM player
+    </select>
+</mapper>
