@@ -14,12 +14,7 @@ public class HistoryService {
 	public HistoryDTO getHistory() {
 		HistoryDTO dto = hMapper.getHistory();
 
-        // ✅ 콘솔에 출력해서 잘 불러오는지 확인
-        System.out.println("📌 DB에서 불러온 히스토리: " + dto);
-
         return dto;
-		
-		//return hMapper.todayHistory();
 	}
 
 }

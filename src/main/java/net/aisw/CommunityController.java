@@ -23,8 +23,14 @@ public class CommunityController {
     private CommunityService cmService;
 
     @RequestMapping("/CommunityMain")
-    public String CommunityMain() {
-    	   
+    public String CommunityMain(HttpSession session) {
+    	List<communityDTO> co = (List<communityDTO>) session.getAttribute("communityInfo");
+    	if(co == null) {
+    		List<communityDTO> communityInfo = cmService.getCommunityInfo();
+    		System.out.println("커뮤니티 게시글 세션 생성");
+            session.setAttribute("communityInfo", communityInfo);
+    	}
+    	
         return "community/CommunityMain";
     }
 
@@ -39,7 +45,7 @@ public class CommunityController {
         
         List<communityDTO> communityInfo = cmService.getCommunityInfo();
         session.setAttribute("communityInfo", communityInfo);
-     
+        
         return "redirect:/CommunityMain";
     }
     

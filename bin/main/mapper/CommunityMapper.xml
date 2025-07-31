@@ -7,6 +7,6 @@
     </insert>
     
     <select id="getCommunityInfo" resultType="net.aisw.dto.communityDTO">
-		select * from community 
+		select * from community order by c_seq desc
 	</select>
 </mapper>
