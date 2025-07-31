@@ -1,0 +1,128 @@
+/* 전체 배경과 폰트 설정 */
+body {
+	background-color: #f4f8ff;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* 퀴즈 전체 박스 */
+form {
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 30px;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 각 퀴즈 영역 */
+form > div {
+	margin-bottom: 40px;
+}
+
+/* 문제 번호와 제목 */
+form p {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* 문제 이미지 */
+form img {
+	display: block;
+	width: 100%;         /* 좌우 여백 없이 꽉 차게 */
+	height: auto;
+	margin: 10px 0;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 라디오 버튼 + 텍스트 */
+form input[type="radio"] {
+	transform: scale(1.2);
+	margin-right: 10px;
+}
+
+form label {
+	display: block;
+	margin: 5px 0;
+	font-size: 17px;
+}
+
+/* 구분선 */
+hr {
+	border: none;
+	height: 1px;
+	background-color: #ccc;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* 확인하기 버튼 */
+button[type="submit"] {
+	display: block;
+	margin: 0 auto;
+	padding: 12px 25px;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+	background-color: #007bff;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+	background-color: #0056b3;
+}
+
+/* 결과 페이지 전체 박스 */
+.quiz-box {
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 30px;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 문제 번호와 제목 */
+.quiz-box p {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* 문제 이미지 */
+.quiz-box img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 10px 0;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 다시 풀기 버튼 */
+.quiz-box button {
+	display: block;
+	margin: 30px auto 0;
+	padding: 12px 25px;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+	background-color: #007bff;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.quiz-box button:hover {
+	background-color: #0056b3;
+}
