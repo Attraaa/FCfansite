@@ -6,6 +6,10 @@ const dim = document.querySelector(".dim");
 const profile = document.querySelector(".profile");
 const profile_menu = document.querySelector(".profile_menu");
 
+const close_btn = document.querySelector(".close_btn");
+const dimLayer = document.querySelector(".dimLayer");
+const history_popup = document.getElementById("historyPopup");
+
 menu.addEventListener("mouseover", ()=> {
     sub_menu.classList.add("show");  
     dim.classList.add("show");  
@@ -24,16 +28,13 @@ profile_menu.addEventListener("mouseout", ()=> {
 });
 
 // 역사 팝업 닫기 버튼
-function closePopup() {
-    const popup = document.querySelector(".popup");
-    const dim = document.querySelector(".dim");
-    if (popup) popup.style.display = "none";
-    if (dim) dim.style.display = "none";
+const closePopup = () => {
+    dimLayer.classList.add("hidden");
+	history_popup.classList.add("hidden");
+	
+	window.location.href = "/history_none";
+	
+	close_btn.removeEventListener("click", closePopup);
 }
 
-function openPopup() {
-	const popup = document.getElementById("historyPopup");
-	const dim = document.getElementById("dimLayer");
-	if (popup) popup.style.display = "block";
-	if (dim) dim.style.display = "block";
-}
+close_btn.addEventListener("click", closePopup);

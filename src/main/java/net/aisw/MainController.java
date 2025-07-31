@@ -2,6 +2,7 @@ package net.aisw;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.HashMap;
 
@@ -73,6 +74,11 @@ public class MainController {
     public String MypagePage() {
         return "/user/mypage";
     }
+    @RequestMapping("/history_none")
+    public String History_none(HttpSession session) {
+    	session.setAttribute("history_none", "yes");
+        return "redirect:/index";
+    }
 
     // ✅ 로그인 응답
     @RequestMapping("/login/response")
@@ -106,13 +112,12 @@ public class MainController {
     @RequestMapping("/mypage/response")
     public String MypagePage_Response(@ModelAttribute userDTO userVo, HttpSession session) {
         String userID = (String) session.getAttribute("userID");
-        String userName = (String) session.getAttribute("userName");
+        Date userBirth = (Date) session.getAttribute("userBirth");
 
-        if (userName == null) {
+        if (userBirth == null) {
             System.out.println("세션 생성");
             HashMap<String, String> userInfo = usv.getUserInfo(userID);
             System.out.println(userInfo);
-            session.setAttribute("userName", userInfo.get("u_name"));
             session.setAttribute("userBirth", userInfo.get("u_birth"));
             session.setAttribute("userJoinDate", userInfo.get("u_joinDate"));
             session.setAttribute("userWhy", userInfo.get("u_why"));

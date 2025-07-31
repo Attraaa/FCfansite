@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%
 	String userID = (String) session.getAttribute("userID");
+	String history_none = (String) session.getAttribute("history_none");
 	
 	String h_title = (String) request.getAttribute("h_title");
 	String h_date = String.valueOf(request.getAttribute("h_date"));
@@ -23,7 +24,7 @@
                 <ul class="menu_ul">
                     <li class="li_1"><a href="#">선수</a></li>
                     <li class="li_2"><a href="#">구단</a></li>
-                    <li class="li_3"><a href="#">커뮤니티</a></li>
+                    <li class="li_3"><a href="/CommunityMain">커뮤니티</a></li>
                     <li class="li_4"><a href="#">컨텐츠</a></li>
                 </ul>
                 <div class="profile">
@@ -50,12 +51,13 @@
                 </div>
             </div>
             <div class="sub_menu">
-                
+				<a>dd</a>
             </div>
-            <div class="dim" id="dimLayer"></div>
-			<% if (h_title != null && !h_title.isEmpty()) { %>
-				<div class="popup" id="historyPopup">
-					<button class="close-btn" onclick="closePopup()">✖</button>
+			<div class="dim"></div>
+			<% if (h_title != null && userID != null && history_none != "yes") { %>
+            <div class="dimLayer"></div>
+				<div id="historyPopup">
+					<button class="close_btn">✖</button>
 				    <p class="title">${diffYear}년 전 오늘</p>
 				    <h3><%= h_title %></h3>
 				    <p class="h_content"><%= h_content %></p>
