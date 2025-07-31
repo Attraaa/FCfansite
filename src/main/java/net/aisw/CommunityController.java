@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
+import org.springframework.ui.Model;
 import jakarta.servlet.http.HttpSession;
 import net.aisw.dto.communityDTO;
 import net.aisw.service.CommunityService;
@@ -48,5 +51,11 @@ public class CommunityController {
         
         return "redirect:/CommunityMain";
     }
-    
+    @RequestMapping("/CommunityDetail/{c_seq}")
+    public String CommunityDetail(@PathVariable ("c_seq") int c_seq, Model model) {
+        communityDTO communityDetail = cmService.getCommunityDetail(c_seq);
+        model.addAttribute("communityDetail", communityDetail);
+        return "community/CommunityDetail";
+    }
+
 }

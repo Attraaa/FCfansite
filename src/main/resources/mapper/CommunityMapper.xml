@@ -9,4 +9,8 @@
     <select id="getCommunityInfo" resultType="net.aisw.dto.communityDTO">
 		select * from community order by c_seq desc
 	</select>
+    
+    <select id="getCommunityDetail" parameterType="int" resultType="net.aisw.dto.communityDTO">
+        SELECT * FROM community WHERE c_seq = #{c_seq}
+    </select>
 </mapper>

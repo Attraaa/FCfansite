@@ -27,12 +27,12 @@
 							for (communityDTO dto : communityList) {
 					%>
 					<tr>
-						<td class="title"><%=dto.getC_title() %></td>
+						<td class="title"><a href="/CommunityDetail/<%=dto.getC_seq() %>"><%=dto.getC_title() %></td>
 						<td class="date"><%=dto.getC_date() %></td>
 						<td class="ID"><%=dto.getU_id() %></td>
 						<td class="like"><%=dto.getC_like() %></td>
 						<td class="dislike"><%=dto.getC_dislike() %></td>
-
+						</a>
 					</tr>
 						
 					<% 

@@ -18,7 +18,9 @@ public class CommunityService {
         return cMapper.SavePost(cmVo);
     }
     public List<communityDTO> getCommunityInfo() {
-    	return cMapper.getCommunityInfo();
+        return cMapper.getCommunityInfo();
     }
-    
+    public communityDTO getCommunityDetail(int c_seq) {
+        return cMapper.getCommunityDetail(c_seq);
+    }
 }

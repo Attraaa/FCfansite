@@ -10,4 +10,5 @@ import net.aisw.dto.communityDTO;
 public interface CommunityMapper {
     public int SavePost(communityDTO cmVo);
     public List<communityDTO> getCommunityInfo();
+    public communityDTO getCommunityDetail(int seq);
 }
