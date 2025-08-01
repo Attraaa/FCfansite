@@ -7,7 +7,7 @@ body {
 }
 
 /* 퀴즈 전체 박스 */
-form {
+#quiz-div {
 	max-width: 800px;
 	margin: 50px auto;
 	padding: 30px;
@@ -17,19 +17,19 @@ form {
 }
 
 /* 각 퀴즈 영역 */
-form > div {
+#quiz-div > div {
 	margin-bottom: 40px;
 }
 
 /* 문제 번호와 제목 */
-form p {
+#quiz-div p {
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
 
 /* 문제 이미지 */
-form img {
+#quiz-div img {
 	display: block;
 	width: 100%;         /* 좌우 여백 없이 꽉 차게 */
 	height: auto;
@@ -41,12 +41,12 @@ form img {
 
 
 /* 라디오 버튼 + 텍스트 */
-form input[type="radio"] {
+#quiz-div input[type="radio"] {
 	transform: scale(1.2);
 	margin-right: 10px;
 }
 
-form label {
+#quiz-div label {
 	display: block;
 	margin: 5px 0;
 	font-size: 17px;
@@ -110,6 +110,8 @@ button[type="submit"]:hover {
 
 /* 다시 풀기 버튼 */
 .quiz-box button {
+	width: 150px;
+	height: 40px;
 	display: block;
 	margin: 30px auto 0;
 	padding: 12px 25px;
@@ -125,4 +127,32 @@ button[type="submit"]:hover {
 
 .quiz-box button:hover {
 	background-color: #0056b3;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.button-group a {
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.button-group a button {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group a button:hover {
+    background-color: #0056b3;
 }
