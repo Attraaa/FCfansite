@@ -40,7 +40,7 @@
                 </form>
 				<%
 					System.out.print(uId);
-					if(userID.equals(uId)) {
+					if(userID != null && userID.equals(uId)) {
 						
 				 %>
 	                <form action="/EditPost/${communityDetail.c_seq}" method="post">
