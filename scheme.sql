@@ -47,7 +47,7 @@ INSERT INTO player(
     p_joinDate, p_backNum, p_height, p_weight, p_photo
 ) VALUES (
     '엘링 홀란', '2000-07-21', '노르웨이', 0, '스트라이커',
-    '2022-07-01', 9, 194, 88, NULL
+    '2022-07-01', 9, 194, 88, '/image/erlinghaaland.jpg'
 );
 
 INSERT INTO player(
@@ -55,7 +55,7 @@ INSERT INTO player(
     p_joinDate, p_backNum, p_height, p_weight, p_photo
 ) VALUES (
     '필 포든', '2000-05-28', '잉글랜드', 0, '미드필더',
-    '2017-11-21', 47, 171, 70, NULL
+    '2017-11-21', 47, 171, 70, '/image/philfoden.jpg'
 );
 
 INSERT INTO player(
@@ -63,7 +63,7 @@ INSERT INTO player(
     p_joinDate, p_backNum, p_height, p_weight, p_photo
 ) VALUES (
     '베르나르두 실바', '1994-08-10', '포르투갈', 0, '미드필더',
-    '2017-05-26', 20, 173, 65, NULL
+    '2017-05-26', 20, 173, 65, '/image/silva.jpg'
 );
 
 INSERT INTO player(
@@ -71,7 +71,7 @@ INSERT INTO player(
     p_joinDate, p_backNum, p_height, p_weight, p_photo
 ) VALUES (
     '로드리', '1996-06-22', '스페인', 0, '미드필더',
-    '2019-07-04', 16, 191, 82, NULL
+    '2019-07-04', 16, 191, 82, '/image/rodri.jpg'
 );
 
 INSERT INTO player(
@@ -79,7 +79,7 @@ INSERT INTO player(
     p_joinDate, p_backNum, p_height, p_weight, p_photo
 ) VALUES (
     '후벵 디아스', '1997-05-14', '포르투갈', 0, '수비수',
-    '2020-09-30', 3, 187, 82, NULL
+    '2020-09-30', 3, 187, 82, '/image/dias.jpg'
 );
 
 --====================================================================================
