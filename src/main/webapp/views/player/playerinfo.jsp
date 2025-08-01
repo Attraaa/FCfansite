@@ -1,5 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String userID = (String) session.getAttribute("userID"); 
+%>
 
 <html>
 <head>
@@ -17,6 +20,7 @@
 		<input type="hidden" name="p_name" value="${playerInfo.p_name}">
 		<input type="hidden" name="p_seq" value=${playerInfo.p_seq}>
 		<input type="hidden" name="p_rating" value=${playerInfo.p_rating}>
+		<input type="hidden" name="userID" value=userID>
 		<input type="submit" value="하트를 주려면 클릭하세요!"></input>
 	</form>
     <p>포지션: ${playerInfo.p_position}</p>

@@ -21,6 +21,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import net.aisw.dto.PlayerDTO;
 import net.aisw.service.PlayerService;
+import net.aisw.service.UserService;
 
 
 
@@ -28,6 +29,8 @@ import net.aisw.service.PlayerService;
 public class PlayerController {
     @Autowired
     private PlayerService pService;
+    @Autowired
+    private UserService uService;
 
     @RequestMapping("/player")
     public String playerPage(Model model) {
@@ -36,10 +39,26 @@ public class PlayerController {
         return "player/player";
     }
     
+    @RequestMapping("/playerRank")
+    public String playerRankPage(Model model) {
+        List<PlayerDTO> playerList = pService.getAllPlayers();
+        model.addAttribute("playerList", playerList);
+        return "player/playerRank";
+    }
+    
     @RequestMapping("/give_heart")
-    public String giveHeart(@ModelAttribute PlayerDTO pVo) {
+    public String giveHeart(@ModelAttribute PlayerDTO pVo, HttpSession session) {
     	int p_seq = pVo.getP_seq();
-        boolean playerList = pService.GiveHeart(pVo);
+    	String userID = (String) session.getAttribute("userID");
+    	
+    	HashMap userInfo = uService.getUserInfo(userID);
+    	int user_give_heart = (int)userInfo.get("u_give_heart");
+
+    	if(user_give_heart == 0) {
+    		uService.UserGiveHeart_plus(userID);
+    		pService.GiveHeart(pVo);
+    	}
+    	
         return "redirect:/playerinfo/" + p_seq;
     }
     
@@ -50,5 +69,8 @@ public class PlayerController {
         model.addAttribute("playerInfo", playerInfo);
         return "player/playerinfo";
     }
+    
+    
+    
 
 }

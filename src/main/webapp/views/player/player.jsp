@@ -7,6 +7,9 @@
 </head>
 <body>
     <h1>Player List</h1><hr>
+	<div class="logo">
+		<a href="/index"><img src="/image/logo.png" alt="맨체스터 시티 엠블럼"></a>
+	</div>
     <table>
         <tr>
             <th>등번호</th>

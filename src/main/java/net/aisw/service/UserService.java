@@ -28,4 +28,7 @@ public class UserService {
 	public HashMap<String, String> getUserInfo(String userID) {
 		return uMapper.getUserInfo(userID);
 	}
+	public int UserGiveHeart_plus(String userID) {
+		return uMapper.UserGiveHeart_plus(userID);
+	}
 }

@@ -29,4 +29,10 @@
 		set u_pwd = #{u_pwd}
 		where u_id = #{u_id}
 	</update>
+	
+	<update id="UserGiveHeart_plus" parameterType="String">
+		update users
+		set u_give_heart = 1
+		where u_id = #{userID}
+	</update>
 </mapper>

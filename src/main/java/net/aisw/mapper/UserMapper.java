@@ -14,6 +14,7 @@ public interface UserMapper {
 	public boolean ReplacePassword(userDTO userVo);
 	public String getUserName(String userID);
 	public HashMap<String, String> getUserInfo(String userID);
+	public int UserGiveHeart_plus(String userID);
 	
 	
 }
