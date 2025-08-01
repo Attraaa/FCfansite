@@ -1,3 +1,12 @@
+.logo {
+	position: absolute;
+	top: 0px;
+	left: 650px;
+
+	img {
+		width: 150px;
+	}
+}
 th {
 	position: relative;
 }

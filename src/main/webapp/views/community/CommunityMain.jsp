@@ -13,6 +13,9 @@
         </header>
         <main>
             <h2>게시글</h2>
+			<div class="logo">
+			    <a href="/index"><img src="/image/logo.png" alt="맨체스터 시티 엠블럼"></a>
+			</div>
                 <div class="article_list">
 					<table>
 						<tr>

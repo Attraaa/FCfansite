@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Player</title>
+	<link rel="stylesheet" href="css/player/player.css">
 </head>
 <body>
     <h1>Player List</h1><hr>
