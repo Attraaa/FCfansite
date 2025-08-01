@@ -22,7 +22,7 @@
                     <a href="/index"><img src="/image/logo.png" alt="맨체스터 시티 엠블럼"></a>
                 </div>
                 <ul class="menu_ul">
-                    <li class="li_1"><a href="#">선수</a></li>
+                    <li class="li_1"><a href="/player">선수</a></li>
                     <li class="li_2"><a href="#">구단</a></li>
                     <li class="li_3"><a href="/CommunityMain">커뮤니티</a></li>
                     <li class="li_4"><a href="#">컨텐츠</a></li>
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="sub_menu">
-				<a>dd</a>
+				<a href="/playerRank">선수 인기 순위</a>
             </div>
 			<div class="dim"></div>
 			<% if (h_title != null && userID != null && history_none != "yes") { %>
@@ -63,7 +63,7 @@
 				    <p class="h_content"><%= h_content %></p>
 				    <img src="<%= h_photo %>" alt="역사 이미지">
 				</div>
-			<% } %>
+			<% } %>	
         </header>
         <aside id="aside_left">
             <div class="slide">

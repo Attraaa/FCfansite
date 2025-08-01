@@ -18,6 +18,7 @@ private String u_name;
 private String u_birth;
 private String u_joinDate;
 private String u_why;
+private int u_give_heart;
 
 }
 

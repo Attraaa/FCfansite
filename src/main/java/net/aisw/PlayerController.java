@@ -36,6 +36,13 @@ public class PlayerController {
         return "player/player";
     }
     
+    @RequestMapping("/give_heart/{p_seq}/{p_rating}/{p_name}")
+    public String giveHeart(@ModelAttribute PlayerDTO pVo) {
+    	System.out.println(pVo);
+        boolean playerList = pService.GiveHeart(pVo);
+        return "redirect:/playerinfo/{p_name}";
+    }
+    
     @RequestMapping("/playerinfo/{p_name}")
     public String playerInfoPage(@ModelAttribute PlayerDTO pVo, Model model) {
         HashMap<String, String> playerInfo = pService.getPlayerInfo(pVo);

@@ -20,4 +20,8 @@ public class PlayerService {
     public HashMap<String, String> getPlayerInfo(PlayerDTO pVo) {
         return pMapper.getPlayerInfo(pVo);
     }
+    
+    public boolean GiveHeart(PlayerDTO pVo) {
+    	return pMapper.GiveHeart(pVo);
+    }
 }

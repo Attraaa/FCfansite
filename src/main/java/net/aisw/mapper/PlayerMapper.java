@@ -10,4 +10,5 @@ import net.aisw.dto.PlayerDTO;
 public interface PlayerMapper {
     public List<PlayerDTO> getAllPlayers();
 	public HashMap<String, String> getPlayerInfo(PlayerDTO playerVo);
+	public boolean GiveHeart(PlayerDTO pVo);
 }

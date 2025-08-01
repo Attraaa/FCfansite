@@ -14,7 +14,7 @@ menu.addEventListener("mouseover", ()=> {
     sub_menu.classList.add("show");  
     dim.classList.add("show");  
 });
-sub_menu.addEventListener("mouseout", ()=> {
+dim.addEventListener("mouseover", ()=> {
     sub_menu.classList.remove("show");
     dim.classList.remove("show");
 });
