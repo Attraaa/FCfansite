@@ -8,8 +8,12 @@
     <title>퀴즈</title>
 </head>
 <body>
+	<div id="quiz-div">
+	<a href="/index">
+		<button type="submit">홈으로</button>
+	</a>
     <form action="/quiz/submit" method="post">
-        <c:forEach var="quiz" items="${quizList}" varStatus="status">
+		<c:forEach var="quiz" items="${quizList}" varStatus="status">
             <div>
                 <p>Q${status.index + 1}</p>
                 <img src="${quiz.q_quizLink}" width="300px"><br/>
@@ -32,5 +36,6 @@
         </c:forEach>
         <button type="submit">확인하기</button>
     </form>
+	</div>
 </body>
 </html>
