@@ -52,6 +52,7 @@
             </div>
             <div class="sub_menu">
 				<a href="/playerRank">선수 인기 순위</a>
+				<a href="/quiz">구단 퀴즈 풀기</a>
             </div>
 			<div class="dim"></div>
 			<% if (h_title != null && userID != null && history_none != "yes") { %>
