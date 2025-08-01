@@ -1,7 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ page import="java.util.List, net.aisw.dto.communityDTO" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<% List<communityDTO> communityList = (List<communityDTO>) session.getAttribute("communityInfo"); %>
+<% 
+	String userID = (String) session.getAttribute("userID");
+	String uId = (String) request.getAttribute("communityDetailUserID");
+%>
 <html>
     <head>
         <title>글내용</title>
@@ -33,19 +34,28 @@
                         <td>${communityDetail.c_contents}</td>
                     </tr>
                 </table>
+				
                 <form action="/CommunityMain" method="get">
                     <input type="submit" value="돌아가기" >
                 </form>
-                <form action="/UpdatePost method="post">
-                    <input type="hidden" name="c_seq" value="${communityDetail.c_seq}">
-                    <input type="hidden" name="u_id" value="${communityDetail.u_id}">
-                    <input type="submit" value="수정하기">
-                </form>
-                <form action="/DeletePost" method="post">
-                    <input type="hidden" name="c_seq" value="${communityDetail.c_seq}">
-                    <input type="hidden" name="u_id" value="${communityDetail.u_id}">
-                    <input type="submit" value="삭제하기">
-                </form>
+				<%
+					System.out.print(uId);
+					if(userID.equals(uId)) {
+						
+				 %>
+	                <form action="/EditPost/${communityDetail.c_seq}" method="post">
+	                    <input type="hidden" name="c_seq" value="${communityDetail.c_seq}">
+	                    <input type="hidden" name="u_id" value="${communityDetail.u_id}">
+	                    <input type="submit" value="수정하기">
+	                </form>
+	                <form action="/DeletePost/${communityDetail.c_seq}" method="post">
+	                    <input type="hidden" name="c_seq" value="${communityDetail.c_seq}">
+	                    <input type="hidden" name="u_id" value="${communityDetail.u_id}">
+	                    <input type="submit" value="삭제하기">
+	                </form>
+				<% 
+					}				
+				%>
         <footer>
         </footer>
     </body>

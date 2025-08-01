@@ -11,4 +11,6 @@ public interface CommunityMapper {
     public int SavePost(communityDTO cmVo);
     public List<communityDTO> getCommunityInfo();
     public communityDTO getCommunityDetail(int seq);
+    public int EditPostSubmit(communityDTO cmVo);
+    public boolean DeletePost(int seq);
 }

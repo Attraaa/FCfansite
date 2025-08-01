@@ -16,7 +16,7 @@
         <c:forEach var="player" items="${playerList}">
             <tr>
                 <td>${player.p_backNum}</td>
-                <td><a href="playerinfo/${player.p_name}">${player.p_name}</a></td>
+                <td><a href="playerinfo/${player.p_seq}">${player.p_name}</a></td>
                 <td>${player.p_position}</td>
             </tr>
         </c:forEach>

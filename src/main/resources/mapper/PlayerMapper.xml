@@ -3,7 +3,7 @@
 <mapper namespace="net.aisw.mapper.PlayerMapper">
 
     <select id="getPlayerInfo" parameterType="net.aisw.dto.PlayerDTO" resultType="java.util.HashMap">
-        SELECT * FROM player WHERE p_name = #{p_name}
+        SELECT * FROM player WHERE p_seq = #{p_seq}
     </select>
     <select id="getAllPlayers" resultType="net.aisw.dto.PlayerDTO">
         SELECT * FROM player

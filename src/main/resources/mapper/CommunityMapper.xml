@@ -13,4 +13,15 @@
     <select id="getCommunityDetail" parameterType="int" resultType="net.aisw.dto.communityDTO">
         SELECT * FROM community WHERE c_seq = #{c_seq}
     </select>
+    
+    <update id="EditPostSubmit" parameterType="net.aisw.dto.communityDTO">
+        UPDATE community
+        SET c_title = #{c_title}, c_contents = #{c_contents}
+        WHERE c_seq = #{c_seq}
+    </update>
+    
+    <delete id="DeletePost" parameterType="int">
+    	DELETE FROM community
+    	WHERE c_seq = #{c_seq}
+    </delete>
 </mapper>

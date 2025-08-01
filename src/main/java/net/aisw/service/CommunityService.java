@@ -23,4 +23,11 @@ public class CommunityService {
     public communityDTO getCommunityDetail(int c_seq) {
         return cMapper.getCommunityDetail(c_seq);
     }
+    public int EditPostSubmit(communityDTO cmVo) {
+        return cMapper.EditPostSubmit(cmVo);
+    }
+    public boolean DeletePost(int c_seq) {
+    	return cMapper.DeletePost(c_seq);
+    }
+
 }

@@ -52,10 +52,36 @@ public class CommunityController {
         return "redirect:/CommunityMain";
     }
     @RequestMapping("/CommunityDetail/{c_seq}")
-    public String CommunityDetail(@PathVariable ("c_seq") int c_seq, Model model) {
+    public String CommunityDetail(@PathVariable ("c_seq") int c_seq, Model model, HttpSession session) {
         communityDTO communityDetail = cmService.getCommunityDetail(c_seq);
         model.addAttribute("communityDetail", communityDetail);
+        model.addAttribute("communityDetailUserID", communityDetail.getU_id());
         return "community/CommunityDetail";
     }
+    @RequestMapping("/EditPost/{c_seq}")
+    public String CommunityEdit(@PathVariable ("c_seq") int c_seq,@ModelAttribute communityDTO cmVo,  Model model) {
+        communityDTO communityDetail = cmService.getCommunityDetail(c_seq);
+        model.addAttribute("communityDetail", communityDetail);
+            
+            return "community/EditPost";
+        
+        }
 
+    @RequestMapping("/EditPostSubmit/{c_seq}")
+    public String EditPostSubmit(@PathVariable ("c_seq") int c_seq, @ModelAttribute communityDTO cmVo, HttpSession session) {
+        cmService.EditPostSubmit(cmVo);
+        List<communityDTO> communityInfo = cmService.getCommunityInfo();
+        session.setAttribute("communityInfo", communityInfo);
+        return "redirect:/CommunityMain";
+    }
+    
+    @RequestMapping("/DeletePost/{c_seq}")
+    public String DeletePost(@PathVariable ("c_seq") int c_seq,@ModelAttribute communityDTO cmVo, HttpSession session) {
+        cmService.DeletePost(c_seq);
+        List<communityDTO> communityInfo = cmService.getCommunityInfo();
+        session.setAttribute("communityInfo", communityInfo);
+            
+        return "redirect:/CommunityMain";
+        
+        }
 }

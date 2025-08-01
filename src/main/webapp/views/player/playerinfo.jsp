@@ -12,7 +12,13 @@
     <p>이름: ${playerInfo.p_name}</p>
     <p>생년월일: ${playerInfo.p_birth}</p>
     <p>국적: ${playerInfo.p_nation}</p>
-    <p>하트 갯수: ${playerInfo.p_rating}<button onclick="location.href='/give_heart/${playerInfo.p_seq}/${playerInfo.p_rating}/${playerInfo.p_name}'">하트를 주려면 클릭하세요!</button></p>
+    <p>하트 갯수: ${playerInfo.p_rating}</p>
+	<form action="/give_heart" method="post">
+		<input type="hidden" name="p_name" value="${playerInfo.p_name}">
+		<input type="hidden" name="p_seq" value=${playerInfo.p_seq}>
+		<input type="hidden" name="p_rating" value=${playerInfo.p_rating}>
+		<input type="submit" value="하트를 주려면 클릭하세요!"></input>
+	</form>
     <p>포지션: ${playerInfo.p_position}</p>
     <p>등번호: ${playerInfo.p_backNum}</p>
     <p>키: ${playerInfo.p_height}cm</p>
