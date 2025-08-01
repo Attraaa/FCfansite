@@ -6,6 +6,10 @@ body {
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 /* 퀴즈 전체 박스 */
 #quiz-div {
 	max-width: 800px;
@@ -13,7 +17,6 @@ body {
 	padding: 30px;
 	background-color: white;
 	border-radius: 15px;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 /* 각 퀴즈 영역 */
@@ -31,12 +34,11 @@ body {
 /* 문제 이미지 */
 #quiz-div img {
 	display: block;
-	width: 100%;         /* 좌우 여백 없이 꽉 차게 */
+	width: 100%;
 	height: auto;
 	margin: 10px 0;
 	border-radius: 10px;
 	border: 1px solid #ccc;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -65,19 +67,17 @@ hr {
 button[type="submit"] {
 	display: block;
 	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding: 12px 25px;
 	font-size: 18px;
 	font-weight: bold;
-	color: white;
-	background-color: #007bff;
+	color: black;
+	background-color: rgb(128, 255, 255);
 	border: none;
 	border-radius: 8px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-	background-color: #0056b3;
+	text-decoration: none;
 }
 
 /* 결과 페이지 전체 박스 */
@@ -87,7 +87,6 @@ button[type="submit"]:hover {
 	padding: 30px;
 	background-color: white;
 	border-radius: 15px;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 /* 문제 번호와 제목 */
@@ -105,54 +104,46 @@ button[type="submit"]:hover {
 	margin: 10px 0;
 	border-radius: 10px;
 	border: 1px solid #ccc;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* 다시 풀기 버튼 */
-.quiz-box button {
+.quiz-box button, .button-group a button, button[type="submit"] {
 	width: 150px;
 	height: 40px;
 	display: block;
-	margin: 30px auto 0;
+	margin: 0 auto;
 	padding: 12px 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: 18px;
 	font-weight: bold;
-	color: white;
-	background-color: #007bff;
+	color: black;
+	background-color: rgb(128, 255, 255);
 	border: none;
 	border-radius: 8px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+	text-decoration: none;
 }
-
-.quiz-box button:hover {
-	background-color: #0056b3;
-}
-
+	
 .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.button-group a {
-    text-decoration: none; /* 밑줄 제거 */
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 30px;
 }
 
 .button-group a button {
-    width: 150px;
-    height: 40px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.button-group a button:hover {
-    background-color: #0056b3;
+	width: 150px;
+	height: 40px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+	background-color: rgb(128, 255, 255);
+	border: none;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
 }
